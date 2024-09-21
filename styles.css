@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
+    min-height: 100vh;
+    color: #e94560;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e94560;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 1.5rem;
+}
+
+.nav-menu a {
+    color: #0f3460;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #e94560;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #e94560;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(26, 26, 46, 0.95);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-menu li {
+        margin: 2.5rem 0;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+
+/* ... existing styles ... */
+
+.hero {
+    height: 100vh;
+    background-image: url('path/to/your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    max-width: 1000px;
+    width: 90%;
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #e94560;
+}
+
+.hero-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #0f3460;
+}
+
+.hero-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #0f3460;
+}
+
+.changing-text {
+    color: #e94560;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #0f3460;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #e94560;
+}
+
+
+/* ... existing styles ... */
+
+.hero {
+    height: 100vh;
+    background-image: url('./images/bg-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* This creates a parallax-like effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* This adds a dark overlay to improve text readability */
+}
+
+.hero-content {
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    max-width: 1000px;
+    width: 90%;
+    position: relative;
+    /* This ensures the content appears above the overlay */
+    z-index: 1;
+}
+
+
+.hero-image img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px 15px 15px 15px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.hero-image:hover img {
+    filter: grayscale(0%);
+}
+
+@media screen and (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+    .social-links {
+        justify-content: center;
+    }
+    .hero-image img {
+        width: 200px;
+        height: 280px;
+    }
+}
