@@ -1,54 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Atharva Rahate - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar">
-        <div class="navbar-container">
-            <div class="logo">Atharva Rahate</div>
-            <div class="menu-toggle">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-            </ul>
+      <div class="navbar-container">
+        <div class="logo">Atharva Rahate</div>
+        <div class="menu-toggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
         </div>
+        <ul class="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </div>
     </nav>
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h2>Hi, myself</h2>
-                <h1>Atharva Rahate</h1>
-                <h3>I am a <span class="changing-text"></span></h3>
-                <div class="social-links">
-                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="mailto:your.atharva.rahate374@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="https://wa.me/8149812710" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="./images/1723177423651.jpeg" alt="Atharva Rahate">
-            </div>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>Hi, myself</h2>
+          <h1>Atharva Rahate</h1>
+          <h3>I am a <span class="changing-text"></span></h3>
+          <p class="edu">
+            Currently pursuing B.E. Engineering at Pune Vidhyarthi Griha's
+            College of Engineering, Nashik
+          </p>
+          <p class="academics">
+            Managing coding plus academics with an aggregate CGPA of 8.14
+          </p>
+          <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:your.email@example.com"
+              ><i class="fas fa-envelope"></i
+            ></a>
+            <a href="https://wa.me/your-whatsapp-number" target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
         </div>
+        <div class="hero-image">
+          <img src="./images/1723177423651.jpeg" alt="Atharva Rahate" />
+        </div>
+      </div>
     </section>
+    <section class="about-me" id="about">
+      <h2 class="about-title">About Me</h2>
+      <div class="about-container">
+        <div class="about-image">
+          <img src="./images/1723177423651.jpeg" alt="Atharva Rahate" />
+          <a href="path/to/your-cv.pdf" class="download-cv" download
+            >Download CV</a
+          >
+        </div>
+        <div class="about-text">
+          <div class="glass-morphic">
+            <p>Hi, I'm Atharva Rahate!</p>
+            <p>
+              I'm a curious and driven Computer Engineering student with a
+              strong passion for technology, coding, and continuous learning.
+              Ever since I discovered my love for programming, I've been
+              committed to expanding my skill set, diving deep into languages
+              like Python, Java, and C++, and exploring the fascinating worlds
+              of data structures, algorithms, and artificial intelligence.
+            </p>
+            <p>
+              I thrive on challenges and enjoy solving complex problems through
+              logical thinking and creative solutions. Whether it's working on a
+              tough coding problem or learning a new technology, I'm always
+              eager to push my boundaries and embrace every opportunity to grow.
+            </p>
+            <p>
+              Beyond the technical aspects, I'm passionate about learning the
+              latest advancements in AI/ML, web development, and data analysis.
+              I'm constantly refining my skills to stay up-to-date with the
+              fast-paced tech world, ensuring that I can bring innovative ideas
+              to life.
+            </p>
+            <p>
+              On a personal level, I believe in the power of perseverance and
+              curiosity. Whether it's learning something new, taking on exciting
+              projects, or finding ways to help others with my knowledge, I stay
+              motivated by the belief that growth comes from stepping outside of
+              one's comfort zone.
+            </p>
+            <p>
+              Outside of tech, I value building meaningful connections, sharing
+              knowledge, and contributing to a community of like-minded
+              individuals who are eager to make an impact through technology.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="skills" id="skills">
+      <h2 class="skills-title">Skills</h2>
+      <div class="skills-row row1">
+        <div class="skills-track">
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <!-- ... more skill images ... -->
+        </div>
+      </div>
+      <div class="skills-row row2">
+        <div class="skills-track">
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <img src="path/to/skill1.png" alt="Skill 1" />
+          <img src="path/to/skill2.png" alt="Skill 2" />
+          <!-- ... more skill images ... -->
+        </div>
+      </div>
+    </section>
+    <section class="projects" id="projects">
+      <h2 class="projects-title">Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <img src="path/to/project1.jpg" alt="Project 1" />
+          <h3>Project 1</h3>
+          <p>Description of Project 1</p>
+          <a
+            href="https://github.com/your-username/project1"
+            target="_blank"
+            class="github-btn"
+            >GitHub Repo</a
+          >
+        </div>
+        <div class="project-card">
+          <img src="path/to/project2.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Description of Project 2</p>
+          <a
+            href="https://github.com/your-username/project2"
+            target="_blank"
+            class="github-btn"
+            >GitHub Repo</a
+          >
+        </div>
+        <div class="project-card">
+          <img src="path/to/project3.jpg" alt="Project 3" />
+          <h3>Project 3</h3>
+          <p>Description of Project 3</p>
+          <a
+            href="https://github.com/your-username/project3"
+            target="_blank"
+            class="github-btn"
+            >GitHub Repo</a
+          >
+        </div>
+        <div class="project-card">
+          <img src="path/to/project2.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Description of Project 2</p>
+          <a
+            href="https://github.com/your-username/project2"
+            target="_blank"
+            class="github-btn"
+            >GitHub Repo</a
+          >
+        </div>
+        <div class="project-card">
+          <img src="path/to/project2.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Description of Project 2</p>
+          <a
+            href="https://github.com/your-username/project2"
+            target="_blank"
+            class="github-btn"
+            >GitHub Repo</a
+          >
+        </div>
+        <div class="project-card">
+          <img src="path/to/project2.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Description of Project 2</p>
+          <a
+            href="https://github.com/your-username/project2"
+            target="_blank"
+            class="github-btn"
+            >GitHub Repo</a
+          >
+        </div>
+        <div class="project-card">
+          <img src="path/to/project2.jpg" alt="Project 2" />
+          <h3>Project 2</h3>
+          <p>Description of Project 2</p>
+          <a
+            href="https://github.com/your-username/project2"
+            target="_blank"
+            class="github-btn"
+            >GitHub Repo</a
+          >
+        </div>
+      </div>
+    </section>
+    <section class="education" id="education">
+      <h2 class="education-title">Education</h2>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>Degree 1</h3>
+            <p class="institution">Institution Name</p>
+            <p class="year">2020 - 2024</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h3>Degree 2</h3>
+            <p class="institution">Institution Name</p>
+            <p class="year">2018 - 2020</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>Degree 1</h3>
+            <p class="institution">Institution Name</p>
+            <p class="year">2020 - 2024</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h3>Degree 2</h3>
+            <p class="institution">Institution Name</p>
+            <p class="year">2018 - 2020</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>Degree 1</h3>
+            <p class="institution">Institution Name</p>
+            <p class="year">2020 - 2024</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h3>Degree 2</h3>
+            <p class="institution">Institution Name</p>
+            <p class="year">2018 - 2020</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="contact-container">
+        <div class="contact-form glassmorphism">
+          <form id="contactForm">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <input
+              type="text"
+              id="location"
+              name="location"
+              placeholder="Your Location"
+              required
+            />
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Reason for mailing"
+              required
+            ></textarea>
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </div>
+        <div class="contact-map glassmorphism">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120073.05638931752!2d73.72616215822105!3d19.991107740633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddd290b09914b3%3A0xcb07845d9d28215c!2sNashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1650123456789!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="./images/QyUpHFYcR3-Ij1dEhc79SQ-removebg-preview.png" alt="Your Logo" class="logo-img" />
+        </div>
+        <div class="footer-links">
+          <a
+            href="https://linkedin.com/in/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://instagram.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://linktr.ee/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            ><i class="fas fa-link"></i
+          ></a>
+          <a
+            href="https://www.hackerrank.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            ><i class="fab fa-hackerrank"></i
+          ></a>
+          <a
+            href="https://wa.me/yourphonenumber"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+          <a href="mailto:your.email@example.com" class="social-icon"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Your Name | All rights reserved</p>
+      </div>
+    </footer>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
