@@ -171,13 +171,13 @@ html {
 .hero-text h2 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  color: #0f3460;
+  color: #4db5ff;
 }
 
 .hero-text h3 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #0f3460;
+  color: #4db5ff;
 }
 
 .changing-text {
@@ -200,7 +200,7 @@ html {
 }
 
 .social-links a {
-  color: #0f3460;
+  color: #4db5ff;
   font-size: 1.5rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -384,7 +384,7 @@ html {
 }
 
 .skills {
-  background-color: #1a1a2e;
+  background-color: #40408064;
   padding: 80px 0;
   overflow: hidden;
 }
@@ -478,7 +478,7 @@ html {
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 20px;
-  width: 300px;
+  width: 900px;
   transition: all 0.3s ease;
 }
 
@@ -549,7 +549,7 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(texture);
+  background-image: url(./images/bg3.webp);
   opacity: 0.05;
   pointer-events: none;
 }
@@ -687,8 +687,12 @@ html {
 
 @media screen and (max-width: 768px) {
   .timeline-item {
-    width: max-content;
+    width: 100%;
     padding-left: 70px;
+    padding-right: 25px;
+  }
+  .timeline-item.timeline-item.right{
+    width: 90%;
     padding-right: 25px;
   }
   .timeline-item.right {
@@ -717,7 +721,7 @@ html {
 }
 
 .contact {
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background-image: url(https://cdn.pixabay.com/photo/2017/02/24/03/12/texture-2093789_1280.jpg);
   color: #fff;
   padding-top: 100px;
   padding-bottom: 150px;
@@ -727,7 +731,7 @@ html {
   text-align: center;
   font-size: 3rem;
   margin-bottom: 40px;
-  color: #4db5ff;
+  color: #052f4d;
   /* Changed color to a light blue */
   text-shadow: 0 0 10px rgba(77, 181, 255, 0.5);
 }
@@ -783,7 +787,7 @@ html {
 }
 
 .submit-btn {
-  background: #4db5ff;
+  background: #022239;
   color: #fff;
   border: none;
   padding: 10px 20px;
