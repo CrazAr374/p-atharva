@@ -1,306 +1,183 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navMenu = document.querySelector(".nav-menu");
+document.addEventListener('DOMContentLoaded', function() {
+    // Hamburger menu functionality
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-  menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-    menuToggle.classList.toggle("active");
-  });
-
-  // GSAP animations
-  gsap.from(".logo", { opacity: 0, x: -50, duration: 1, ease: "power3.out" });
-  gsap.from(".nav-menu li", {
-    opacity: 0,
-    y: -20,
-    duration: 0.5,
-    stagger: 0.1,
-    ease: "power3.out",
-  });
-
-  // Hover animation for menu items
-  const menuItems = document.querySelectorAll(".nav-menu a");
-  menuItems.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      gsap.to(item, { scale: 1.1, duration: 0.3, ease: "power1.out" });
+    menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
     });
-    item.addEventListener("mouseleave", () => {
-      gsap.to(item, { scale: 1, duration: 0.3, ease: "power1.out" });
-    });
-  });
 
-  // Hamburger menu animation
-  menuToggle.addEventListener("click", () => {
-    if (menuToggle.classList.contains("active")) {
-      gsap.to(".bar:nth-child(1)", { rotation: 45, y: 6, duration: 0.3 });
-      gsap.to(".bar:nth-child(2)", { opacity: 0, duration: 0.3 });
-      gsap.to(".bar:nth-child(3)", { rotation: -45, y: -6, duration: 0.3 });
-    } else {
-      gsap.to(".bar:nth-child(1)", { rotation: 0, y: 0, duration: 0.3 });
-      gsap.to(".bar:nth-child(2)", { opacity: 1, duration: 0.3 });
-      gsap.to(".bar:nth-child(3)", { rotation: 0, y: 0, duration: 0.3 });
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+        }
+    });
+
+    // Close menu when a nav link is clicked
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+        });
+    });
+
+    // Changing text animation
+    const changingText = document.querySelector('.changing-text');
+    const texts = ['Web Developer', 'AIML Learner', 'Developer'];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100;
+
+    function typeText() {
+        const currentText = texts[textIndex];
+        
+        if (isDeleting) {
+            changingText.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            changingText.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        if (!isDeleting && charIndex === currentText.length) {
+            isDeleting = true;
+            typingSpeed = 50;
+            setTimeout(typeText, 1000); // Pause at the end of the word
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            typingSpeed = 100;
+            setTimeout(typeText, 500); // Pause before starting the next word
+        } else {
+            setTimeout(typeText, typingSpeed);
+        }
     }
-  });
-});
 
-// ... existing code ...
+    typeText(); // Initial call
 
-document.addEventListener("DOMContentLoaded", () => {
-  // ... existing code ...
-
-  // Changing text animation
-  const changingText = document.querySelector(".changing-text");
-  const roles = ["Developer", "AIML Learner", "Front-End Dev"];
-  let currentIndex = 0;
-
-  function updateChangingText() {
-    gsap.to(changingText, {
-      duration: 0.5,
-      opacity: 0,
-      onComplete: () => {
-        changingText.textContent = roles[currentIndex];
-        gsap.to(changingText, { duration: 0.5, opacity: 1 });
-        currentIndex = (currentIndex + 1) % roles.length;
-      },
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
-  }
 
-  setInterval(updateChangingText, 3000);
+    // Form submission handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            console.log('Form submitted');
+            // Reset form after submission
+            contactForm.reset();
+        });
+    }
 
-  // Hero section animations
-  gsap.from(".hero-text h2, .hero-text h1, .hero-text h3", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    stagger: 0.2,
-    ease: "power3.out",
-  });
+    // Add any additional JavaScript functionality here
+    gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from(".social-links a", {
-    opacity: 0,
-    y: 20,
-    duration: 0.5,
-    stagger: 0.1,
-    ease: "power3.out",
-    delay: 1,
-  });
-
-  gsap.from(".education, .academics", {
-    opacity: 0,
-    y: 20,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: "power3.out",
-    delay: 1.2,
-  });
-
-  gsap.from(".hero-image img", {
-    opacity: 0,
-    scale: 0.8,
-    duration: 1,
-    ease: "power3.out",
-    delay: 0.5,
-  });
-
-  // Image hover effect
-
-
-  document.addEventListener("mouseleave", () => {
-    gsap.to(heroImage, {
-      rotationY: 0,
-      rotationX: 0,
-      duration: 0.5,
-      ease: "power2.out",
-    });
-  });
-  // ... existing code ...
-
-  // Custom cursor
-  const cursor = document.createElement("div");
-  cursor.classList.add("custom-cursor");
-  document.body.appendChild(cursor);
-
-  document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-  });
-
-  // About Me section animations
-  gsap.registerPlugin(ScrollTrigger);
-
-  const aboutTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".about-me",
-      start: "top 80%",
-      end: "bottom 20%",
-      toggleActions: "play none none reverse",
-    },
-  });
-
-  aboutTl
-    .from(".about-title", {
-      opacity: 0,
-      y: -50,
-      duration: 1,
-      ease: "power3.out",
-    })
-    .from(
-      ".about-image",
-      {
+    // Navbar animation
+    gsap.from('.navbar', {
+        y: -100,
         opacity: 0,
-        x: -100,
         duration: 1,
-        ease: "power3.out",
-      },
-      "-=0.5"
-    )
-    .from(
-      ".glass-morphic",
-      {
+        ease: 'power3.out'
+    });
+
+    // Hero section animation
+    gsap.from('.hero-text h1, .hero-text h2, .hero-text h3, .hero-text p', {
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        duration: 1,
+        ease: 'power3.out'
+    });
+
+    gsap.from('.hero-image', {
         opacity: 0,
         x: 100,
         duration: 1,
-        ease: "power3.out",
-      },
-      "-=0.5"
-    )
-    .from(
-      ".glass-morphic p",
-      {
+        delay: 0.5,
+        ease: 'power3.out'
+    });
+
+    // About section animation
+    gsap.from('.about-container', {
         opacity: 0,
-        y: 30,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+            trigger: '.about-me',
+            start: 'top 80%'
+        }
+    });
+
+    // Skills animation
+    gsap.from('.skills-row', {
+        opacity: 0,
+        y: 50,
         duration: 1,
         stagger: 0.2,
-        ease: "power3.out",
-      },
-      "-=0.5"
-    )
-    .from(
-      ".download-cv",
-      {
+        scrollTrigger: {
+            trigger: '.skills',
+            start: 'top 80%'
+        }
+    });
+
+    // Projects animation
+    gsap.from('.project-card', {
         opacity: 0,
-        y: 30,
+        y: 50,
+        duration: 0.8,
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: '.projects',
+            start: 'top 80%'
+        }
+    });
+
+    // Education timeline animation
+    gsap.from('.timeline-item', {
+        opacity: 0,
+        x: (index, target) => index % 2 === 0 ? -50 : 50,
+        duration: 0.8,
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: '.education',
+            start: 'top 80%'
+        }
+    });
+
+    // Contact section animation
+    gsap.from('.contact-form, .contact-map', {
+        opacity: 0,
+        y: 50,
         duration: 1,
-        ease: "power3.out",
-      },
-      "-=0.5"
-    );
-
-  // Hover effect for about image
-  const aboutImage = document.querySelector(".about-image");
-  aboutImage.addEventListener("mouseenter", () => {
-    gsap.to(cursor, {
-      scale: 2,
-      duration: 0.3,
-    });
-  });
-
-  aboutImage.addEventListener("mouseleave", () => {
-    gsap.to(cursor, {
-      scale: 1,
-      duration: 0.3,
-    });
-  });
-
-  // Parallax effect for about image
-  gsap.to(".about-image", {
-    yPercent: -20,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".about-me",
-      scrub: true,
-    },
-  });
-
-  // Text reveal animation
-  const textReveal = document.querySelectorAll(".glass-morphic p");
-  textReveal.forEach((text) => {
-    const splitText = new SplitText(text, { type: "words,chars" });
-    gsap.from(splitText.chars, {
-      opacity: 0,
-      y: 20,
-      duration: 0.5,
-      stagger: 0.02,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: text,
-        start: "top 80%",
-        toggleActions: "play none none reverse",
-      },
-    });
-  });
-
-  document.addEventListener("DOMContentLoaded", () => {
-    // Animate the skills title
-    gsap.from(".skills-title", {
-      opacity: 0,
-      y: -50,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".skills",
-        start: "top 80%",
-      },
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: '.contact',
+            start: 'top 80%'
+        }
     });
 
-    // Animate the skill rows
-    gsap.from(".skills-row", {
-      opacity: 0,
-      x: (index) => (index % 2 === 0 ? -100 : 100),
-      duration: 1,
-      stagger: 0.3,
-      scrollTrigger: {
-        trigger: ".skills",
-        start: "top 60%",
-      },
+    // Footer animation
+    gsap.from('.footer-content, .footer-bottom', {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: 'footer',
+            start: 'top 90%'
+        }
     });
-
-    // Optional: Pause animation on hover
-    const skillTracks = document.querySelectorAll(".skills-track");
-
-    skillTracks.forEach((track) => {
-      track.addEventListener("mouseenter", () => {
-        gsap.to(track, { animationPlayState: "paused" });
-      });
-
-      track.addEventListener("mouseleave", () => {
-        gsap.to(track, { animationPlayState: "running" });
-      });
-    });
-  });
-  document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.getElementById("contactForm");
-
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      // Here you would typically send the form data to a server
-      // For this example, we'll just show the notification
-
-      showNotification(
-        "Thank you for connecting! You will soon receive an email."
-      );
-
-      // Reset the form
-      contactForm.reset();
-    });
-
-    function showNotification(message) {
-      const notification = document.createElement("div");
-      notification.className = "notification";
-      notification.textContent = message;
-
-      document.body.appendChild(notification);
-
-      // Trigger reflow
-      notification.offsetHeight;
-
-      notification.classList.add("show");
-
-      setTimeout(() => {
-        notification.classList.remove("show");
-        setTimeout(() => {
-          document.body.removeChild(notification);
-        }, 300);
-      }, 3000);
-    }
-  });
 });
